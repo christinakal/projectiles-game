@@ -20,13 +20,23 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./Projectile.js":
+/*!***********************!*\
+  !*** ./Projectile.js ***!
+  \***********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var _game_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./game.js */ \"./game.js\");\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\n\n\nvar Projectile = /*#__PURE__*/function () {\n  function Projectile(x, y, radius, color, velocity) {\n    _classCallCheck(this, Projectile);\n\n    this.x = x;\n    this.y = y;\n    this.radius = radius;\n    this.color = color;\n    this.velocity = velocity;\n  }\n\n  _createClass(Projectile, [{\n    key: \"draw\",\n    value: function draw(ctx) {\n      ctx.beginPath();\n      ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI, false);\n      ctx.fillStyle = this.color;\n      ctx.fill();\n    }\n  }]);\n\n  return Projectile;\n}();\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Projectile);\n\n//# sourceURL=webpack://projectiles-game/./Projectile.js?");
+
+/***/ }),
+
 /***/ "./game.js":
 /*!*****************!*\
   !*** ./game.js ***!
   \*****************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var _Player_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Player.js */ \"./Player.js\");\n\nvar canvas = document.querySelector(\"canvas\");\nvar ctx = canvas.getContext(\"2d\");\nvar player = new _Player_js__WEBPACK_IMPORTED_MODULE_0__.default(100, 100, 30, \"#216F9C\");\nconsole.log(player); // resize the canvas to fill browser window dynamically\n\nwindow.addEventListener(\"resize\", resizeCanvas, false); // === functions\n\nfunction resizeCanvas() {\n  canvas.height = innerHeight;\n  canvas.width = innerWidth; // draw the player\n\n  player.draw(ctx);\n} // === call functions\n\n\nresizeCanvas();\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n  ctx: ctx\n});\n\n//# sourceURL=webpack://projectiles-game/./game.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var _Player_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Player.js */ \"./Player.js\");\n/* harmony import */ var _Projectile_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Projectile.js */ \"./Projectile.js\");\n\n\nvar canvas = document.querySelector(\"canvas\");\nvar ctx = canvas.getContext(\"2d\");\nvar player = new _Player_js__WEBPACK_IMPORTED_MODULE_0__.default(100, 100, 30, \"#216F9C\");\nconsole.log(\"It's working!!!\"); // resize the canvas to fill browser window dynamically\n\nwindow.addEventListener(\"resize\", resizeCanvas, false);\nwindow.addEventListener(\"click\", function () {\n  console.log(\"clicked!\");\n}); // === functions\n\nfunction resizeCanvas() {\n  canvas.height = innerHeight;\n  canvas.width = innerWidth; // draw the player\n\n  player.draw(ctx);\n} // === call functions\n\n\nresizeCanvas();\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n  ctx: ctx\n});\n\n//# sourceURL=webpack://projectiles-game/./game.js?");
 
 /***/ })
 
